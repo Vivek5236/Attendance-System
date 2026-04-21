@@ -11,6 +11,7 @@ const { protect, authorize } = require('../middleware/authMiddleware');
 
 router.use(protect);
 
+
 router.post('/request', authorize('employee'), requestOvertime);
 router.get('/my', authorize('employee'), getMyOvertime);
 router.get('/pending', authorize('manager', 'admin'), getPendingOvertime);
