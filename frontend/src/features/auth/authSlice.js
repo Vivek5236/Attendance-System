@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Load user/token from localStorage on app start
+
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
 
@@ -34,7 +34,7 @@ const authSlice = createSlice({
 
 export const { setCredentials, logout } = authSlice.actions
 
-// Selectors
+
 export const selectCurrentUser = (state) => state.auth.user
 export const selectIsAuthenticated = (state) => state.auth.isAuthenticated
 export const selectToken = (state) => state.auth.token
